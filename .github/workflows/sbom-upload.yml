@@ -9,9 +9,11 @@ jobs:
   tree:
     name: Maven Multi Dependency Submission
     runs-on: ubuntu-latest
+    
+    # The API requires write permission on the repository to submit dependencies (HTTP Status 403 for request POST https://api.github.com/repos/vulna-felickz/mvnexbook-examples-1.0/dependency-graph/snapshots)
     permissions:
       actions: read
-      contents: read
+      contents: write
       
     strategy:
       fail-fast: false
