@@ -25,7 +25,7 @@ jobs:
     - run: mvn --version
       
     - name: Submit Web Dependency Snapshot
-      uses: advanced-security/maven-dependency-submission-action@2.0.1
+      uses: advanced-security/maven-dependency-submission-action@v2.0.1
       with:
         directory: "./ch-multi/"
         #snapshot-include-file-name: true
