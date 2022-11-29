@@ -19,15 +19,20 @@ jobs:
       fail-fast: false
     
     steps:
-    #- name: Checkout repository
-    #  uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
       
     - run: mvn --version
       
+# Reproducing a bug - delete me
+# - name: Submit Web Dependency Snapshot
+#      uses: advanced-security/maven-dependency-submission-action@v2.0.1
+#      with:
+#        directory: "./"
+        
     - name: Submit Web Dependency Snapshot
-      uses: advanced-security/maven-dependency-submission-action@v2.0.1
-      with:
-        directory: "./"
-        #directory: "./ch-multi/"
-        #snapshot-include-file-name: true
+      uses: advanced-security/maven-dependency-submission-action@multi-module
+      with:   
+        directory: "./ch-multi/"
+        snapshot-include-file-name: true
         #snapshot-dependency-file-name: "./ch-multi/pom.xml"
