@@ -22,6 +22,8 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
       
+    - run: mvn --version
+      
     - name: Submit Web Dependency Snapshot
       uses: advanced-security/maven-dependency-submission-action@v2.0.1
       with:
