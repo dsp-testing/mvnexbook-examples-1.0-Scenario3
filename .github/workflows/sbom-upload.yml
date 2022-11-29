@@ -1,0 +1,28 @@
+name: "Maven MultiModule Dependency Submission"
+on:
+  push:
+    branches: [ "master" ]
+  schedule:
+    - cron: '35 9 * * 6'
+  
+jobs:
+  tree:
+    name: Maven Multi Dependency Submission
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      
+    strategy:
+      fail-fast: false
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: Submit Web Dependency Snapshot
+      uses: advanced-security/maven-dependency-submission-action@multi-module
+      with:
+        directory: "./ch-multi/"
+        snapshot-include-file-name: true
+        snapshot-dependency-file-name: "./ch-multi/pom.xml"
