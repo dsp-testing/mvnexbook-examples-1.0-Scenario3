@@ -26,7 +26,8 @@ jobs:
       
     - name: Submit Web Dependency Snapshot
       uses: advanced-security/maven-dependency-submission-action@v2.0.1
-      #with:
+      with:
+        directory: "./"
         #directory: "./ch-multi/"
         #snapshot-include-file-name: true
         #snapshot-dependency-file-name: "./ch-multi/pom.xml"
