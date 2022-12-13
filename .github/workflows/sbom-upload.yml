@@ -35,4 +35,4 @@ jobs:
       with:   
         directory: "./ch-multi/"
         snapshot-include-file-name: true
-        snapshot-dependency-file-name: "./ch-multi/pom.xml"
+        #snapshot-dependency-file-name: "./ch-multi/pom.xml"
