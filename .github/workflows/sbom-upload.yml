@@ -4,6 +4,7 @@ on:
     branches: [ "master" ]
   schedule:
     - cron: '35 9 * * 6'
+  workflow_dispatch:
   
 jobs:
   tree:
